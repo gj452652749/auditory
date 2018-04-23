@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title>Finance Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jcanvas.js"></script>
+</head>
+
+<body>
+  <<canvas width="300" height="150"></canvas>
+
+</body>
+<script type="text/javascript">
+  $('canvas').drawArc({
+  strokeStyle: '#000',
+  strokeWidth: 5,
+  x: 100, y: 100,
+  radius: 50,
+  // start and end angles in degrees
+  start: 0, end: 90
+});
+  var json=[
+  {"x":"247", "y":"373"},
+  {"x":"0",   "y":"390"},
+  {"x":"5",   "y":"21" },
+  {"x":"245", "y":"0"  },
+  {"x":"247", "y":"373"}
+];
+for(var i in json){
+  //ctx.lineTo(json[i].x,json[i].y);
+}
+var lineJson='{ "strokeStyle": "\'#000\'", "strokeWidth": 10, "x1": 100, "y1": 50,"x2": 100, "y2": 150}';
+var lineObj=$.parseJSON(lineJson);
+$('canvas').drawLine(lineObj);
+</script>
+</html>
